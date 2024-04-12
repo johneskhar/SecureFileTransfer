@@ -1,6 +1,8 @@
 import bcrypt
 import mysql.connector
 import pyotp
+from database import get_database_connection
+import logging
 
 class UserManagement:
     def __init__(self, db_config):
@@ -14,7 +16,7 @@ class UserManagement:
             self.db = mysql.connector.connect(**self.db_config)
             self.cursor = self.db.cursor(buffered=True)
         except mysql.connector.Error as err:
-            print(f"Error: {err}")
+            logging.error("Database connection error: %s", str(err), exc_info=True)
 
     def close_db(self):
         if self.cursor:
@@ -94,10 +96,13 @@ class UserManagement:
         if user_data:
             stored_username, stored_password, secret_key = user_data
             if self.verify_password(password, stored_password):
+                print(f"Login successful for user: {stored_username}")
                 return True, secret_key, stored_username  # Login successful, return True, the secret key, and the username
             else:
+                print(f"Incorrect password for user: {username}")
                 return False, None, None  # Incorrect password, return False and no secret key and username
         else:
+            print(f"Username not found: {username}")
             return False, None, None  # Username not found, return False and no secret key and username
 
     def generate_secret_key(self, username):
@@ -142,6 +147,31 @@ class UserManagement:
             return user_data[0]  # Assuming the secret key is in the first column
         else:
             return None  # Handle the case where the user is not found
+
+    def get_user_id_by_username(self, username):
+        try:
+            connection = get_database_connection()  # Assuming you have a function to get a database connection
+            cursor = connection.cursor()
+
+            # Your database query to retrieve user_id based on username
+            query = "SELECT user_id FROM users WHERE username = %s"
+            cursor.execute(query, (username,))
+            result = cursor.fetchone()
+
+            if result:
+                user_id = result[0]
+                logging.debug("User ID for %s: %s", username, user_id)
+                return user_id
+            else:
+                logging.error("No user found with the username: %s", username)
+                return None
+        except Exception as e:
+            logging.error("Error in get_user_id_by_username: %s", str(e), exc_info=True)
+            return None
+        finally:
+            if connection:
+                connection.close()
+
 
 class User:
     def __init__(self, username, email, secret_key):

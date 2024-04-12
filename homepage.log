@@ -1,0 +1,20 @@
+2024-01-25 17:10:18,748 - DEBUG - # _do_auth(): self._auth_plugin: 
+2024-01-25 17:10:18,749 - DEBUG - new_auth_plugin: caching_sha2_password
+2024-01-25 17:10:18,749 - DEBUG - # request: b'c\xddW\x1ew\xbd\xb8\xa9Wr\xa3L\xa3g\xa5\xaa\xd1(h\xef' size: 20
+2024-01-25 17:10:18,750 - DEBUG - # server response packet: bytearray(b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00')
+2024-01-25 19:45:18,167 - DEBUG - # _do_auth(): self._auth_plugin: 
+2024-01-25 19:45:18,168 - DEBUG - new_auth_plugin: caching_sha2_password
+2024-01-25 19:45:18,168 - DEBUG - # request: b'q\xfb\xe8\xa8!\xea~\x9ag~\xf61\x9c\xbb\x04&\x9f\xa0d\xe7' size: 20
+2024-01-25 19:45:18,168 - DEBUG - # server response packet: bytearray(b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00')
+2024-01-25 19:53:06,540 - DEBUG - # _do_auth(): self._auth_plugin: 
+2024-01-25 19:53:06,541 - DEBUG - new_auth_plugin: caching_sha2_password
+2024-01-25 19:53:06,541 - DEBUG - # request: b'6\xad\xfb\x08\xcf\xb3M\\\x16\xf0\x16Z\xeb2\x85p8\x1f\xe2\xad' size: 20
+2024-01-25 19:53:06,541 - DEBUG - # server response packet: bytearray(b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00')
+2024-01-25 19:57:01,374 - DEBUG - # _do_auth(): self._auth_plugin: 
+2024-01-25 19:57:01,375 - DEBUG - new_auth_plugin: caching_sha2_password
+2024-01-25 19:57:01,375 - DEBUG - # request: b'\x0e\x01q\xe9\x04\xb4rO\xdd,\x89\x12\x97\x0c3\xfd\x0c\xd0(\xde' size: 20
+2024-01-25 19:57:01,375 - DEBUG - # server response packet: bytearray(b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00')
+2024-01-25 19:59:32,158 - DEBUG - # _do_auth(): self._auth_plugin: 
+2024-01-25 19:59:32,158 - DEBUG - new_auth_plugin: caching_sha2_password
+2024-01-25 19:59:32,159 - DEBUG - # request: b'k\xf5\xc2\x16`\xe37\xcd\xc7\x98\xf6\x9a\xd3\xaa\x1b\x80\xedA\x7f\xf3' size: 20
+2024-01-25 19:59:32,159 - DEBUG - # server response packet: bytearray(b'\x07\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00')

@@ -210,7 +210,7 @@ label.place(x=90, y=410)
 # Function to open the register script and close the login script
 def open_login_script():
     subprocess.Popen(["C:/Users/calie/AppData/Local/Microsoft/WindowsApps/python.exe", "C:/Users/calie/PycharmProjects/FYP_Test1/loginuser.py"])
-    window.destroy()  # Close the register window
+    #window.destroy()  # Close the register window
 
 # Sign In Button
 signin = Button(frame, width=6, text='Sign In', border=0, bg='white', cursor='hand2', fg='#57a1f8', command=open_login_script)
